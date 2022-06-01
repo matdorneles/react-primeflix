@@ -11,12 +11,14 @@ function Filme() {
   const [filme, setFilme] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const apiKey = "ENTER YOUR API KEY HERE" // !! IMPORTANT
+
   useEffect(() => {
     async function loadFilme() {
       await api
         .get(`/movie/${id}`, {
           params: {
-            api_key: "0eb66b13c99835c4287f68d05cde5f43",
+            api_key: apiKey,
             language: "pt-BR",
           },
         })
